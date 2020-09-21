@@ -4,14 +4,14 @@ import PlayTool from "./PlayTool/PlayTool";
 function RockIt() {
   const [toolPicked, setToolPicked] = useState("");
   console.log(toolPicked);
-  // function handleClick(tool) {
-  //   setToolPicked(tool);
-  // }
+  function handleClick(tool) {
+    setToolPicked(tool);
+  }
   return (
     <div className="container">
       <div id="list-tools">
         {/* <PlayTool tool="scissors" onClick={setToolPicked("scissors")} /> */}
-        {/* <PlayTool tool="paper" onClick={handleClick("paper")} /> */}
+        <PlayTool tool="paper" onClick={handleClick("paper")} />
         <PlayTool
           tool="rock"
           onClick={(e) => {
