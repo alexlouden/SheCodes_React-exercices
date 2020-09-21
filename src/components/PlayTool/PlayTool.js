@@ -1,30 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 import scissors from "./img/scissors.jpg";
 import paper from "./img/paper.jpg";
 import rock from "./img/rock.jpg";
 
-function PlayTool(props) {
-  const [addClass, addClassValue] = useState(false);
-
-  const toggleClass = () => {
-    addClassValue(!addClass);
-  };
-
+function PlayTool({ tool, toolPicked, onClick }) {
   // const image = `components/PlayTool/img/${props.tool}.jpg`;
   return (
-    <div className={`card ${addClass ? " active" : ""}`}>
-      <h3>{props.tool}</h3>
+    <div className={`card ${tool === toolPicked ? " active" : ""}`}>
+      <h3>{tool}</h3>
       <img
-        src={
-          props.tool === "scissors"
-            ? scissors
-            : props.tool === "paper"
-            ? paper
-            : rock
-        }
-        alt={props.tool}
-        onClick={toggleClass}
+        src={tool === "scissors" ? scissors : tool === "paper" ? paper : rock}
+        alt={tool}
+        onClick={onClick}
       />
     </div>
   );
